@@ -9,57 +9,32 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            int f,max=0,t,j=0,i=0;
+            int a;
             string str;
-            Console.WriteLine("введите количетсво чисел в массиве");
-            str=Console.ReadLine();
-            f=int.Parse(str);
+            Console.WriteLine("введите количество чисел в массиве");
+            str = Console.ReadLine();
+            a = int.Parse(str);
 
-            int[]A = new int [f];
-            Random rnd=new Random();
+            Char[]A = new Char[a];
+            Random rnd = new Random();
 
+            for (int i = 0; i < a; i++)
+            {
+                A[i] = Convert.ToChar(rnd.Next()%100);
+                Console.Write(A[i]+" ");
+            }
+            Console.WriteLine();
 
-            for (i = 0; i < f; i++)
+            for (int f = 0; f < a; f++)
+            {
+                if(A[f]!='$')
+                
+                    A[f]='$';
+                Console.Write(A[f] + " ");
+            }
             
-            
-                A[i] = rnd.Next()%100;
-            
-                for (i = 0; i < f; i++)
-                {
-                    Console.Write(A[i] + " ");
-                }
-
-
-                for (i = 0; i < f; i++)
-                {
-                    max = 0;
-                    for (j = 0; j < f - i; j++)
-                    {
-                        if (A[j] > A[max])
-                            max = j;
-                    }
-                    j--;
-                    if (max < j)
-                    {
-                        t = A[max];
-                        A[max] = A[j];
-                        A[j] = t;
-                    }
-                }
-                Console.WriteLine();
-
-                for (i = 0; i < f; i++)
-                {
-                    Console.Write(A[i] + " ");
-                }
-
-
-            Console.ReadKey();
-            
-
-
+                Console.ReadLine();
 
         }
     }
 }
-
