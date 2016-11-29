@@ -9,31 +9,38 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            int a;
+            int a,b,f;
             string str;
-            Console.WriteLine("введите количество чисел в массиве");
-            str = Console.ReadLine();
+
+            Console.WriteLine("введите количество чисел в массиве 1");
+            str=Console.ReadLine();
             a = int.Parse(str);
 
-            Char[]A = new Char[a];
+            Console.WriteLine("введите количество чисел в массиве 2");
+            str = Console.ReadLine();
+            b = int.Parse(str);
+
             Random rnd = new Random();
 
+            int[] A = new int[a];
             for (int i = 0; i < a; i++)
             {
-                A[i] = Convert.ToChar(rnd.Next()%100);
+                A[i] = rnd.Next()%100;
                 Console.Write(A[i]+" ");
             }
             Console.WriteLine();
-
-            for (int f = 0; f < a; f++)
+            int[] B= new int[b];
+            for (int c = 0; c < b; c++)
             {
-                if(A[f]!='$')
-                
-                    A[f]='$';
-                Console.Write(A[f] + " ");
+                B[c] = rnd.Next()%100;
+                Console.Write(B[c] + " ");
             }
-            
+         
+
                 Console.ReadLine();
+
+            
+
 
         }
     }
